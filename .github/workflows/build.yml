@@ -13,9 +13,11 @@ jobs:
       image: danteev/texlive:latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
     - name: Install dependencies
       run: |
         python3 --version
@@ -25,7 +27,7 @@ jobs:
         which pip3
     - name: Build LaTeX
       run: |
-        dir_to_compile=( $(python .github/workflows/get_directory_to_compile.py ${{ github.repository }} ${{github['event']['number']}} ) ) 
+        dir_to_compile=( $(python .github/workflows/get_directory_to_compile.py ${{ github.repository }} ${{github['event']['number']}} ${{ secrets.GITHUB_TOKEN }} ) )
         echo "dir to compile value $dir_to_compile"
         for dir in $dir_to_compile; do
           cd $PWD/$dir
