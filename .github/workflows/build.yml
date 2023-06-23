@@ -32,7 +32,7 @@ jobs:
       run: |
         echo "github repo is ${{ github.repository }}"
         echo "${{github['event']['number']}}"
-        my_var = "${{ secrets.GITHUB_TOKEN }}"
+        my_var="${{ secrets.GITHUB_TOKEN }}"
         if [ -z my_var ]; then echo "\$my_var is NULL"; fi
         dir_to_compile=( $(python .github/workflows/get_directory_to_compile.py ${{ github.repository }} ${{github['event']['number']}} ${{ secrets.GITHUB_TOKEN }} ) )
         echo "dir to compile value $dir_to_compile"
