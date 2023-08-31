@@ -23,8 +23,6 @@ jobs:
         python3 --version
         echo "installing pip"
         python3 -m pip install --user --upgrade pip requests  
-        which pip
-        which pip3
     - name: Build LaTeX
       run: |
         echo "github repo is ${{ github.repository }}"
