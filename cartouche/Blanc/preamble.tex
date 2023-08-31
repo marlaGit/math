@@ -2,11 +2,11 @@
 % Mise en page
 %------------------
 
-%\textheight 230mm             %     Einstellungen fuer A4 Papier
+
 \textwidth 168mm              %
 \topmargin -1cm 
 \oddsidemargin -4mm \evensidemargin -4mm 
-%\pagestyle{plain}
+
 \parindent 0mm
 
 \usepackage{fancyhdr}  % mise en page fancy
@@ -22,34 +22,38 @@
 \setlength{\headheight}{60pt}
 \renewcommand\headrulewidth{3pt}
 \fancyhead[L]{École Polytechnique Fédérale de Lausanne}
-\fancyhead[R]{\includegraphics[width=0.08\linewidth]{../cartouche/2000px-Logo_EPFL.png} }
+\fancyhead[R]{\includegraphics[width=0.08\linewidth]{../cartouche/Blanc/2000px-Logo_EPFL.png} }
 
 
 % Footer
 \renewcommand\footrulewidth{1pt}
-\fancyfoot[L]{Recueil de problémes de physique générale}
+\fancyfoot[L]{Recueil de problèmes de physique générale}
 
 \fancyfoot[R]{\thepage/\pageref{LastPage}}
 
 \usepackage{epsfig}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{calc}
-% \usepackage[T1]{fontenc}
+
+\usepackage{standalone}
 \usepackage{url}
 \usepackage{cancel}
 \usepackage{graphicx,color}
 \usepackage{xcolor}
 \usepackage{lipsum}
+\usepackage{adjustbox}
 
-% \usepackage[latin1]{inputenc} % entree 8 bits iso-latin1
-% \usepackage[T1]{fontenc}      % encodage 8 bits des fontes utilisées
 %-----------------
 % TIKZ et PGF
 %-----------------
-\usepackage{pgf}			% PGF is a macro packéage for creéatéing graphéics. It comes with a user-friendly synétax layer called TikZ
-\usepackage{tikz}			
-\usepackage{pgfplots}		% PGFPlots draws high-qualéity funcétion plots with a user-friendly inéteréface diérectly in TeX.
+\usepackage{pgf}			
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings,calc,patterns}
+\usetikzlibrary{shapes}	
+\usepackage{pgfplots}		
 \pgfplotsset{compat=1.12}
+
 
 \tikzset{math3d2/.style=
     {x= {(-0.3cm,-0.42cm)}, z={(0cm,1cm)},y={(.7cm,0cm)}}} % Axonométrie: x sur l'avant gauche, y en face
